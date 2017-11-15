@@ -94,6 +94,12 @@ int main(int argc, char**argv)
 		vertexList2.push_back(&vertexList1[i]);
 		int newIndex = vertexList2.size() - 1; //keep track of this index
 
+		//first replace all old versions of this with the new one
+		for (int index = 0; index < icount; ++index)
+		{
+			if (indicesList[index] == i) indicesList[index] = newIndex;
+		}				
+
 		//start one past the i'th vertex
 		for (int j = i; j < vcount; ++j)
 		{
