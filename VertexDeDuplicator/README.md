@@ -1,0 +1,1 @@
+VertexDeDuplicator is a tool to help process 3D files that have many duplicate vertices.
