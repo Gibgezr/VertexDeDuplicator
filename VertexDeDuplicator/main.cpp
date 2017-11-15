@@ -137,13 +137,14 @@ int main(int argc, char**argv)
 
 	//index data
 	outFile << icount << "\n";
-	for (int i = 0; i < icount; ++i)
+	int counter = 0;
+	for (counter = 0; counter < icount; ++counter)
 	{
-		outFile << indicesList[i] << " ";
+		outFile << indicesList[counter] << " ";
 		
-		if(!i%20 && i != 0) outFile << "\n";
+		if(!counter %20 && counter != 0) outFile << "\n";
 	}
-
+	if (counter % 20) outFile << "\n";
 	//texture file name
 	outFile << textureFilename;
 
