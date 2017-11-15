@@ -84,7 +84,7 @@ int main(int argc, char**argv)
 	std::vector<bool> processedList(vcount,false);
 
 	//try to de-duplicate each verstex
-	for (int i = 0; i < vcount - 1; ++i)
+	for (int i = 0; i < vcount; ++i)
 	{
 		//have we already de-duped one of these exact vertices? If so, move on.
 		if (processedList[i]) continue;
@@ -94,7 +94,8 @@ int main(int argc, char**argv)
 		vertexList2.push_back(&vertexList1[i]);
 		int newIndex = vertexList2.size() - 1; //keep track of this index
 
-		for (int j = 0; j < vcount; ++j)
+		//start one past the i'th vertex
+		for (int j = i; j < vcount; ++j)
 		{
 			if (vertexList1[i] == vertexList1[j])
 			{
